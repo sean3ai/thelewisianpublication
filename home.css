@@ -1,0 +1,370 @@
+main{
+  margin-left: 5%;
+  margin-right: 5%;
+}
+/* Shared container for all home sections */
+.lede-wrap,
+.section {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+.lede-wrap { padding-top: clamp(36px, 6vw, 64px); }
+
+.lede {
+  font-family: var(--display);
+  font-size: clamp(19px, 2.4vw, 23px);
+  line-height: 1.5;
+  color: var(--ink);
+  max-width: 62ch;
+  margin: 0;
+}
+
+.section { padding-top: clamp(40px, 6vw, 72px); }
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 10px;
+  margin: 0 0 30px;
+}
+
+.section-title {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(22px, 3vw, 28px);
+  margin: 0;
+  color: var(--ink);
+}
+
+.section-meta {
+  font-size: 14px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+/* ==========================================================
+   LATEST UPDATE  — single featured story, full width
+   ========================================================== */
+
+.latest {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: clamp(20px, 4vw, 44px);
+  align-items: start;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.latest-figure {
+  margin: 0;
+  background: var(--paper-2);
+  border: 1px solid var(--rule);
+}
+
+.latest-figure img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.latest-body { padding-top: 4px; }
+
+.latest-kicker {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--plum);
+  margin: 0 0 10px;
+}
+
+.latest-title {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(26px, 4vw, 38px);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  margin: 0 0 16px;
+}
+
+.latest-text {
+  font-size: 16px;
+  color: var(--body-text);
+  margin: 0 0 12px;
+  white-space: pre-line; /* preserves the line breaks from your HTML */
+}
+
+.latest-text strong { color: var(--ink); }
+
+/* ==========================================================
+   FEATURED UPDATES — 2-column card grid
+   ========================================================== */
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+}
+
+.feature-card {
+  background: var(--white, #FFFFFF);
+  border: 1px solid var(--rule);
+  border-top: 4px solid var(--plum);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.feature-figure {
+  margin: 0;
+  background: var(--paper-2);
+  overflow: hidden;
+}
+
+.feature-figure img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+}
+
+.feature-body {
+  padding: 20px 22px 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.feature-credit {
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 10px;
+}
+
+.feature-title {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(19px, 2.4vw, 23px);
+  line-height: 1.25;
+  color: var(--ink);
+  margin: 0 0 12px;
+}
+
+.feature-text {
+  font-size: 15px;
+  color: var(--body-text);
+  margin: 0 0 16px;
+  flex: 1;
+}
+
+.feature-link {
+  align-self: flex-start;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--plum);
+  text-decoration: none;
+  border-bottom: 2px solid var(--marigold);
+  padding-bottom: 2px;
+  transition: border-color 0.2s ease;
+}
+
+.feature-link:hover { border-bottom-color: var(--plum); }
+
+/* ==========================================================
+   EDITORIAL CARTOONS — 2-up grid, framed
+   ========================================================== */
+
+.cartoons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+}
+
+.cartoon-card {
+  background: var(--paper-2);
+  border: 1px solid var(--rule);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cartoon-figure {
+  margin: 0 0 14px;
+  background: var(--white, #FFFFFF);
+  border: 1px solid var(--rule);
+  overflow: hidden;
+}
+
+.cartoon-figure img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: contain; /* keeps the whole cartoon visible */
+  display: block;
+  background: #fff;
+}
+
+.cartoon-caption {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 15px;
+  color: var(--ink-soft);
+  margin: 0 0 8px;
+}
+
+.cartoon-link {
+  align-self: flex-start;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--plum);
+  text-decoration: none;
+  border-bottom: 2px solid var(--marigold);
+  padding-bottom: 1px;
+}
+
+.cartoon-link:hover { border-bottom-color: var(--plum); }
+
+/* ==========================================================
+   MAGAZINE ISSUES — horizontal shelf of covers
+   ========================================================== */
+
+.magazines .shelf {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  padding-bottom: 18px;
+  scroll-snap-type: x proximity;
+  justify-content: center;
+}
+
+.magazines .shelf::-webkit-scrollbar { height: 6px; }
+.magazines .shelf::-webkit-scrollbar-thumb {
+  background: var(--rule);
+  border-radius: 3px;
+}
+
+.issue {
+  flex: 0 0 210px;
+  scroll-snap-align: start;
+}
+
+.issue-cover {
+  position: relative;
+  display: block;
+  background: var(--ink);
+  border-left: 7px solid var(--plum);
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  margin: 0;
+}
+
+.issue-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.issue-cover:hover img { transform: scale(1.04); }
+
+.issue-label {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 17px;
+  color: var(--ink);
+  margin: 14px 0 4px;
+}
+
+.issue-meta {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+}
+
+.magazine-cta {
+  display: inline-block;
+  margin-top: 28px;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--plum);
+  text-decoration: none;
+  border-bottom: 2px solid var(--marigold);
+  padding-bottom: 2px;
+}
+
+.magazine-cta:hover { border-bottom-color: var(--plum); }
+
+/* ==========================================================
+   HANDOFF BANNER
+   ========================================================== */
+
+.handoff {
+  padding: clamp(48px, 7vw, 80px) var(--gutter);
+  max-width: var(--max);
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border-top: 1px solid var(--rule);
+}
+
+.handoff-copy {
+  font-family: var(--display);
+  font-size: 20px;
+  color: var(--ink);
+  max-width: 48ch;
+  margin: 0;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 14px 26px;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--sans);
+  transition: background 0.2s ease;
+}
+
+.btn:hover { background: var(--plum); color: var(--paper); }
+
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+
+@media (max-width: 760px) {
+  .latest { grid-template-columns: 1fr; }
+  .featured-grid { grid-template-columns: 1fr; }
+  .cartoons-grid { grid-template-columns: 1fr; }
+  .handoff { flex-direction: column; align-items: flex-start; }
+}
+
+.social-link {
+    color: var(--paper);
+    text-decoration: none;
+}
+
+.social-link:hover {
+    text-decoration: underline;
+}

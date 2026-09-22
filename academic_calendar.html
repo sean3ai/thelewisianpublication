@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Lewisian - Calendar & Coverage</title>
+    
+    <!-- Google Fonts: Fraunces and IBM Plex Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="pallete.css">
+        <!-- FontAwesome for the Pen Icon & User Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="academic_calendar.css">
+</head>
+<body>
+        <header>
+        <!-- Left Side: Logo and Title -->
+        <div class="header-left">
+            <img src="cover_image/logo.jpg" alt="The Lewisian Logo">
+            
+            <div class="header-text">
+                <h1 class="main-title">THE LEWISIAN</h1>
+                
+                <div class="subtitle-row">
+                    <div class="line"></div>
+                    <div class="subtitle-text">Heart Expressed in Ink</div>
+                    <i class="fa-solid fa-pen-nib pen-icon"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side: Navigation Links -->
+        <div class="header-right">
+            <nav class="nav-links">
+                <a href="index.html" >Home</a>
+                <a href="academic_calendar.html" >
+                    Academic Calendar
+                </a>
+            </nav>
+            
+            <!-- <a href="#" class="sign-in-btn">
+                <i class="fa-regular fa-user"></i> Sign In
+            </a> -->
+        </div>
+    </header>
+
+    <main id="main">
+
+      <section class="lede-wrap">
+        <h2 class="page-title">Upcoming events</h2>
+        <p class="lede">
+          Coverages, editorial meetings and deadlines the publication has scheduled.
+          This list reads directly from the Lewisians calendar, so it changes as the
+          editorial board updates it.
+        </p>
+      </section>
+
+      <section class="section" aria-labelledby="cal-heading">
+        <div class="section-head">
+          <h3 id="cal-heading" class="section-title">Calendar</h3>
+          <span class="section-meta" id="cal-status">Loading events…</span>
+        </div>
+        <div id="events" class="events" aria-live="polite">
+            <!-- Calendar events will be injected here via JavaScript -->
+            No events scheduled at this moment.
+        </div>
+      </section>
+
+      <section class="section request" aria-labelledby="form-heading">
+        <div class="request-panel">
+          <div class="request-intro">
+            <h3 id="form-heading" class="request-title">Request publication coverage</h3>
+            <p>
+              Tell us about your activity and the editorial board will assign writers or
+              photographers if the schedule allows. A confirmation slip is emailed to you
+              as a PDF once the request is logged.
+            </p>
+            <p class="request-note">Requests are reviewed before they appear on the public calendar.</p>
+          </div>
+
+          <form id="coverage-form" class="form" novalidate>
+            <div class="field">
+              <label for="name">Your name</label>
+              <input id="name" name="name" type="text" autocomplete="name" required>
+              <p class="err" data-err="name"></p>
+            </div>
+
+            <div class="field">
+              <label for="email">Email address</label>
+              <input id="email" name="email" type="email" autocomplete="email" required
+                     placeholder="lewisian@example.com">
+              <p class="err" data-err="email"></p>
+            </div>
+
+            <div class="field">
+              <label for="organization">Organization or department name</label>
+              <input id="organization" name="organization" type="text">
+            </div>
+
+            <div class="field">
+              <label for="event">Event name</label>
+              <input id="event" name="event" type="text" required>
+              <p class="err" data-err="event"></p>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="date">Date</label>
+                <input id="date" name="date" type="date" required>
+                <p class="err" data-err="date"></p>
+              </div>
+              <div class="field">
+                <label for="time">Start time</label>
+                <input id="time" name="time" type="time">
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="location">Location</label>
+              <input id="location" name="location" type="text" required>
+              <p class="err" data-err="location"></p>
+            </div>
+
+            <div class="field">
+                <label>Coverage needed</label>
+
+                <div class="checkbox-group">
+                    <label>
+                        <input type="checkbox" name="coverage" value="writing">
+                        Writing
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="coverage" value="photography">
+                        Photography
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="coverage" value="video">
+                        Video
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="coverage" value="cartooning">
+                        Cartooning
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="coverage" value="not-sure">
+                        Not sure yet
+                    </label>
+                </div>
+            </div>
+
+            <div class="field">
+              <label for="message">Anything else we should know</label>
+              <textarea id="message" name="message" rows="4"></textarea>
+            </div>
+            <p class="foot-small">
+                Note: After submission, the Editorial Board will review the request for verification and confirmation of the event. Further instructions will be provided once the request has been reviewed.<br>
+                Thank you.
+            </p>
+
+            <button class="btn btn-send" type="submit" id="submit-btn">Send request</button>
+            <p class="status" id="form-status" role="status"></p>
+          </form>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="foot">
+        <div class="foot-inner">
+            <p class="foot-mark">The Lewisian</p>
+            <p>Publication Office, The Lewis College, Sorsogon City, Sorsogon</p><br>
+            <a class="social-link" href="https://www.facebook.com/TheLewisianOnline">Facebook: The Lewisian</a>
+            <p>Email: thelewisians@thelewiscollege.edu.ph</p>
+            <p class="foot-small">ACADEMIC NOTICE <br>
+            This website is created for academic purposes only as part of the requirements for Software Engineering 1 at The Lewis College. 
+            It is intended for educational and demonstration purposes.</p>
+        </div>  
+    </footer>
+
+</body>
+</html>

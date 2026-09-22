@@ -1,0 +1,280 @@
+/* <!-- pallete --> */
+        :root {
+            --ink:       #121C2E;  /* Deep navy */
+            --ink-soft:  #273349;  /* Soft navy */
+            --paper:     #F0EFE8;  /* Warm off-white */
+            --ink-text:  #101827;
+
+            --accent:    #C89B3C;  /* Muted gold */
+            --accent-soft: #E2C77D; /* Light gold */
+
+            --muted:     #6B7280;  /* Gray */
+            --border:    #D6D3C8;  /* Warm gray */
+            --white:     #FFFFFF;
+
+            --timesnewroman: "Fraunces", Georgia, "Times New Roman", serif;
+            --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+            --primary-blue: #1c3d6e;
+        }
+
+        body {
+            margin: 0;
+            background: var(--paper);
+            color: var(--ink-text);
+            font-family: var(--sans);
+            font-size: 17px;
+            line-height: 1.6;
+            /* Removed body flexbox so the header spans the full width */
+        }
+
+        /* ---------------- Header ---------------- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--ink);
+            padding: 20px 40px;
+            border-bottom: 4px solid var(--accent); /* Gold separator line */
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        /* Circle Logo */
+        header img {
+            width: 100px;           
+            height: 100px;          
+            border-radius: 50%;     
+            object-fit: cover;      
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3); 
+            border: 2px solid var(--accent-soft); /* Subtle gold ring around logo */
+        }
+
+        .header-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Main Title Styling */
+        .main-title {
+            font-family: var(--timesnewroman);
+            font-size: 3rem; 
+            color: var(--paper);
+            margin: 0;
+            letter-spacing: 2px;
+            font-weight: 700;
+            text-transform: uppercase;
+            line-height: 1;
+        }
+
+        /* Subtitle Row */
+        .subtitle-row {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 8px;
+            color: var(--paper);
+        }
+
+        /* Changed lines to gold accents */
+        .line {
+            width: 140px;
+            height: 2px;
+            background-color: var(--accent);
+        }
+
+        .subtitle-text {
+            font-family: var(--timesnewroman);
+            font-style: italic;
+            font-size: 1.2rem;
+            font-weight: 400;
+            white-space: nowrap; 
+        }
+
+        /* Pen Icon - changed to gold */
+        .pen-icon {
+            font-size: 1.2rem;
+            color: var(--accent);
+            transform: rotate(-135deg); 
+        }
+
+        /* Right Side Navigation */
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: var(--paper);
+            text-decoration: none;
+            font-family: var(--sans);
+            font-size: 1rem;
+            font-weight: 600;
+            opacity: 0.8;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-soft);
+            opacity: 1;
+        }
+
+        /* Sign In Button */
+        .sign-in-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--accent);
+            color: var(--ink);
+            padding: 10px 20px;
+            border-radius: 4px; /* Squared edges fit the academic style better */
+            font-family: var(--sans);
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .sign-in-btn:hover {
+            background-color: var(--accent-soft);
+        }
+
+        /* ---------------- Footer ---------------- */
+        .foot {
+            background:
+        linear-gradient(rgba(18, 28, 46, 0.90), rgb(16, 26, 46)),
+        url("cover_image/coverr.png");
+            /* background-color: var(--ink); */
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            padding: 0 40px;
+        }
+        .foot-inner { 
+            padding-top: 40px; 
+            padding-bottom: 46px; 
+            max-width: 1200px;
+            margin: 0 auto;
+            
+        }
+        .foot p {color: var(--paper); margin: 0 0 6px; font-size: 14px; }
+        
+        .foot-mark {
+            font-family: var(--timesnewroman); /* Fixed undefined variable */
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--paper);
+            margin-bottom: 10px !important;
+        }
+        .foot-small { color: #7A8497; }
+
+
+
+        /* /* news api____________________ */
+
+    .news { padding-bottom: clamp(48px, 7vw, 80px); }
+
+    .news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 2fr));
+    gap: 24px;
+    justify-content: center;
+    margin: 5%;
+
+    }
+
+    .news-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--white, #FFFFFF);
+    border: 1px solid var(--rule);
+    border-top: 4px solid var(--plum);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .news-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .news-thumb {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    background: var(--paper-2, #E7E5DB);
+    }
+
+    .news-body {
+    padding: 16px 18px 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    }
+
+    .news-source {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--plum);
+    margin: 0 0 6px;
+    }
+
+    .news-title {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 1.25;
+    color: var(--ink);
+    margin: 0 0 10px;
+    }
+
+    .news-title a {
+    color: inherit;
+    text-decoration: none;
+    }
+    .news-title a:hover { color: var(--plum); }
+
+    .news-desc {
+    font-size: 11px;
+    color: var(--body-text);
+    margin: 0 0 14px;
+    flex: 1;
+    }
+
+    .news-meta {
+    font-size: 11px;
+    color: var(--muted);
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+    border-top: 1px solid var(--rule);
+    padding-top: 10px;
+    }
+
+    .news-read {
+    color: var(--plum);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 2px solid var(--marigold);
+    padding-bottom: 1px;
+    white-space: nowrap;
+    }
+    .news-read:hover { border-bottom-color: var(--plum); }
+
+    @media (max-width: 560px) {
+    .news-grid { grid-template-columns: 1fr; }
+    } 
