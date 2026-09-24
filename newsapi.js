@@ -8,7 +8,7 @@
   if (!container) return;
   
   /* ---- CONFIGURATION ---- */
-  const API_KEY = "5c48b8b42bd64fa79096c96aba53386a";
+  const API_KEY = "49d83ee18faf4e70b5ea7af76995b455";
   const QUERY = "Philippines";
   const MAX_ARTICLES = 5;
   const SORT_BY = "publishedAt";
