@@ -59,8 +59,8 @@ img {
 
         /* Circle Logo */
         header img {
-            width: 100px;           
-            height: 100px;          
+    width: clamp(56px, 9vw, 100px);
+    height: clamp(56px, 9vw, 100px);          
             border-radius: 50%;     
             object-fit: cover;      
             box-shadow: 0 4px 10px rgba(0,0,0,0.3); 
@@ -70,12 +70,13 @@ img {
         .header-text {
             display: flex;
             flex-direction: column;
+            
         }
 
         /* Main Title Styling */
         .main-title {
             font-family: var(--timesnewroman);
-            font-size: 3rem; 
+    
             color: var(--paper);
             margin: 0;
             letter-spacing: 2px;
@@ -96,7 +97,7 @@ img {
         /* Changed lines to gold accents */
         .line {
             width: 35%;
-            height: 2px;
+            height: 3px;
             background-color: var(--accent);
         }
 
