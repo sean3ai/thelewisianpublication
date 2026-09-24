@@ -42,18 +42,18 @@
   // ---------- Header mapping ----------------------------------------------
   // Column headers in the sheet are matched by name (not position), so the
   // column order in the sheet does not matter.
-  const HEADER_ALIASES = {
-    name: ['name', 'yourname', 'requester', 'requestername'],
-    email: ['email', 'emailaddress'],
-    organization: ['organization', 'organizationordepartmentname', 'department', 'organizationdepartment'],
-    event: ['event', 'eventname', 'title'],
-    date: ['date', 'eventdate'],
-    time: ['time', 'starttime'],
-    location: ['location', 'venue'],
-    coverage: ['coverage', 'coverageneeded'],
-    message: ['message', 'notes', 'anythingelse'],
-    status: ['status']
-  };
+    const HEADER_ALIASES = {
+      name: ['name', 'yourname', 'requester', 'requestername'],
+      email: ['email', 'emailaddress'],
+      organization: ['organization', 'organizationordepartmentname', 'department', 'organizationdepartment'],
+      event: ['event', 'eventname', 'title'],
+      date: ['date', 'eventdate'],
+      time: ['time', 'starttime'],
+      location: ['location', 'venue'],
+      coverage: ['coverage', 'coverageneeded'],
+      message: ['message', 'notes', 'anythingelse'],
+      status: ['status']
+    };
 
   const normalize = (s) => String(s || '').toLowerCase().replace(/[^a-z0-9]/g, '');
 
@@ -222,7 +222,7 @@
   // ---------- Render -------------------------------------------------------
   const MONTHS = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
   const WEEKDAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-
+  // ------------------------------renders teh events?
   function renderEvent(e) {
     const coverageTags = e.coverage
       .map((c) => `<span class="event-tag">${escapeHtml(c)}</span>`)
@@ -234,20 +234,44 @@
     if (e.location) metaParts.push(e.location);
 
     return `
-      <article class="event-card">
-        <div class="event-date" aria-hidden="true">
-          <span class="event-month">${MONTHS[e.date.getMonth()]}</span>
-          <span class="event-day">${e.date.getDate()}</span>
-          <span class="event-year">${e.date.getFullYear()}</span>
+      <article class="story">
+        <div class="story-date" aria-hidden="true">
+          <span class="story-month">${MONTHS[e.date.getMonth()]}</span>
+          <span class="story-day">${e.date.getDate()}</span>
+          <span class="story-year">${e.date.getFullYear()}</span>
         </div>
-        <div class="event-body">
-          <h4 class="event-title">${escapeHtml(e.title)}</h4>
+        <div class="story-body">
+          <h3 class="story-title">${escapeHtml(e.title)}${coverageTags}</h3>
           <p class="event-meta">${metaParts.map(escapeHtml).join(' &middot; ')}</p>
           ${e.organization ? `<p class="event-org">${escapeHtml(e.organization)}</p>` : ''}
-          ${coverageTags ? `<div class="event-tags">${coverageTags}</div>` : ''}
         </div>
       </article>`;
   }
+  // function renderEvent(e) {
+  //   const coverageTags = e.coverage
+  //     .map((c) => `<span class="event-tag">${escapeHtml(c)}</span>`)
+  //     .join('');
+
+  //   const metaParts = [];
+  //   metaParts.push(WEEKDAYS[e.date.getDay()]);
+  //   if (e.time) metaParts.push(e.time.label);
+  //   if (e.location) metaParts.push(e.location);
+
+  //   return `
+  //     <article class="event-card">
+  //       <div class="event-date" aria-hidden="true">
+  //         <span class="event-month">${MONTHS[e.date.getMonth()]}</span>
+  //         <span class="event-day">${e.date.getDate()}</span>
+  //         <span class="event-year">${e.date.getFullYear()}</span>
+  //       </div>
+  //       <div class="event-body">
+  //         <h4 class="event-title">${escapeHtml(e.title)}</h4>
+  //         <p class="event-meta">${metaParts.map(escapeHtml).join(' &middot; ')}</p>
+  //         ${e.organization ? `<p class="event-org">${escapeHtml(e.organization)}</p>` : ''}
+  //         ${coverageTags ? `<div class="event-tags">${coverageTags}</div>` : ''}
+  //       </div>
+  //     </article>`;
+  // }
 
   function renderEvents(events) {
     if (!events.length) {

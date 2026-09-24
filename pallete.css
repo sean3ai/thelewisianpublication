@@ -1,4 +1,14 @@
 /* <!-- pallete --> */
+/* --- Prevent horizontal overflow on mobile --- */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
         :root {
             --ink:       #121C2E;  /* Deep navy */
             --ink-soft:  #273349;  /* Soft navy */
@@ -25,6 +35,7 @@
             font-family: var(--sans);
             font-size: 17px;
             line-height: 1.6;
+            
             /* Removed body flexbox so the header spans the full width */
         }
 
@@ -33,6 +44,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            
+            flex-wrap: wrap;
             background-color: var(--ink);
             padding: 20px 40px;
             border-bottom: 4px solid var(--accent); /* Gold separator line */
@@ -82,7 +95,7 @@
 
         /* Changed lines to gold accents */
         .line {
-            width: 140px;
+            width: 35%;
             height: 2px;
             background-color: var(--accent);
         }
@@ -107,11 +120,13 @@
             display: flex;
             align-items: center;
             gap: 30px;
+            
         }
 
         .nav-links {
             display: flex;
             gap: 25px;
+            text-align: right;
         }
 
         .nav-links a {

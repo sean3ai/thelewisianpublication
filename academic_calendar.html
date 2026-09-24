@@ -62,10 +62,11 @@
           <h3 id="cal-heading" class="section-title">Calendar</h3>
           <span class="section-meta" id="cal-status">Loading events…</span>
         </div>
-        <div id="events" class="events" aria-live="polite">
-            <!-- Calendar events will be injected here via JavaScript -->
-            No events scheduled at this moment.
-        </div>
+        <!-- update this -->
+          <section class="section" aria-labelledby="cal-heading">
+            <div id="events" aria-live="polite"></div>
+          </section>
+          <!-- ------------- -->
       </section>
 
       <section class="section request" aria-labelledby="form-heading">
@@ -83,7 +84,7 @@
           <form id="coverage-form" class="form" novalidate>
             <div class="field">
               <label for="name">Your name</label>
-              <input id="name" name="name" type="text" autocomplete="name" required>
+              <input id="name" name="name" type="text" autocomplete="name" maxlength="50" required>
               <p class="err" data-err="name"></p>
             </div>
 
@@ -96,12 +97,12 @@
 
             <div class="field">
               <label for="organization">Organization or department name</label>
-              <input id="organization" name="organization" type="text">
+              <input id="organization" name="organization" maxlength="50" type="text">
             </div>
 
             <div class="field">
               <label for="event">Event name</label>
-              <input id="event" name="event" type="text" required>
+              <input id="event" name="event" type="text" maxlength="30" required>
               <p class="err" data-err="event"></p>
             </div>
 
@@ -119,7 +120,7 @@
 
             <div class="field">
               <label for="location">Location</label>
-              <input id="location" name="location" type="text" required>
+              <input id="location" name="location" type="text" maxlength="100" required>
               <p class="err" data-err="location"></p>
             </div>
 
@@ -156,7 +157,7 @@
 
             <div class="field">
               <label for="message">Anything else we should know</label>
-              <textarea id="message" name="message" rows="4"></textarea>
+              <textarea id="message" name="message" rows="4" maxlength="200"></textarea>
             </div>
             <p class="foot-small">
                 Note: After submission, the Editorial Board will review the request for verification and confirmation of the event. Further instructions will be provided once the request has been reviewed.<br>
@@ -175,10 +176,11 @@
         <div class="foot-inner">
             <p class="foot-mark">The Lewisian</p>
             <p>Publication Office, The Lewis College, Sorsogon City, Sorsogon</p><br>
+            <p>Contact Us by:</p>
             <a class="social-link" href="https://www.facebook.com/TheLewisianOnline">Facebook: The Lewisian</a>
-            <p>Email: thelewisians@thelewiscollege.edu.ph</p>
+            <p>Email: thelewisians@thelewiscollege.edu.ph</p><br>
             <p class="foot-small">ACADEMIC NOTICE <br>
-            This website is created for academic purposes only as part of the requirements for Software Engineering 1 at The Lewis College. 
+            This website is created for academic purposes only as part of the requirements for System Integration and Architecture at The Lewis College. 
             It is intended for educational and demonstration purposes.</p>
         </div>  
     </footer>

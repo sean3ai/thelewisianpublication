@@ -1,3 +1,5 @@
+
+
 main{
   margin-left: 5%;
   margin-right: 5%;
@@ -15,7 +17,7 @@ main{
 
 .lede {
   font-family: var(--display);
-  font-size: clamp(19px, 2.4vw, 23px);
+  font-size: clamp(11px, 2.4vw, 16px);
   line-height: 1.5;
   color: var(--ink);
   max-width: 62ch;
@@ -43,7 +45,7 @@ main{
 }
 
 .section-meta {
-  font-size: 14px;
+  font-size: 24px;
   color: var(--muted);
   white-space: nowrap;
 }
@@ -267,7 +269,10 @@ main{
   display: block;
   background: var(--ink);
   border-left: 7px solid var(--plum);
-  aspect-ratio: 3 / 4;
+  width: 100%;
+  height: 80vh;          /* 80% of the screen height */
+  min-height: 500px;
+  aspect-ratio: 4 / 4;
   overflow: hidden;
   margin: 0;
 }
